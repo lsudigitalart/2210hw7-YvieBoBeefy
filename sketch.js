@@ -14,13 +14,6 @@ var bg;
   var bgx = 1280;
   var bgy = 0;
 
-//bateyes
-var bat;
-  var bx = -250;
-  var by = 480-245
-  var bh = 245;
-  var bw = 500;
-
 //extra time variables
 var time1;
 var time2;
@@ -42,7 +35,6 @@ function preload(){
 
   ghost = loadImage("assets/ghost.gif");
   bg = loadImage("assets/GRAVEYARD.png");
-  //bat = loadImage("assets/BAT.gif");
 }
 
 function setup(){
@@ -50,9 +42,7 @@ function setup(){
  createCanvas(1280, 960);
  background(0);
 
- push();
-    MySound.play();
-pop();
+  MySound.play();
 
 }
 
@@ -69,7 +59,7 @@ function draw(){
     image(bg, bgx, bgy, 1600*4, 234*4);
 
     //side scroller effect
-      if (timer > 15000){
+      if (timer > 10000){
         bgx = bgx - speed;
       }
 
@@ -79,60 +69,60 @@ push();
   image(ghost, gx, gy, gw, gh);
 
   //bob up and down
-      if (timer > 15393){
+      if (timer > 10393){
         gy = gy + speed2
       }
 
 //jitter forward anf back
-      if ((timer > 37400) && (timer < 38000)){
+      if ((timer > 32400) && (timer < 33000)){
         gx = 240;
         rt2 = 100;
       }
 
-      if ((timer > 38000) && (timer < 38400)){
+      if ((timer > 33000) && (timer < 33400)){
         gx = 640;
         rt3 = 100;
         rt2 = 0;
       }
 
-      if ((timer > 38400) && (timer < 42200)){
+      if ((timer > 33400) && (timer < 37200)){
         gx = 440;
         rt3 = 0;
       }
 
-      if ((timer > 42200) && (timer < 42800)){
+      if ((timer > 37200) && (timer < 37800)){
         gx = 640;
         rt3 = 100;
       }
 
-      if ((timer > 42800) && (timer < 43200)){
+      if ((timer > 37800) && (timer < 38200)){
         gx = 240;
         rt2 = 100;
         rt3 = 0;
       }
 
-      if ((timer > 43200) && (timer < 46400)){
+      if ((timer > 38200) && (timer < 41700)){
           gx = 100;
           rt2 = 0;
       }
 
-      if ((timer > 46700) && (timer < 47300)){
+      if ((timer > 41700) && (timer < 42300)){
         gx = 240;
         rt2 = 100;
       }
 
-      if((timer > 47300) && (timer < 47600)){
+      if((timer > 42300) && (timer < 42700)){
         gx = 640;
         rt3 = 100;
         rt2 = 0;
       }
 
-      if(timer > 47600){
+      if(timer > 42700){
         gx = 440;
         rt3 = 0;
       }
 
-      if (timer > 79000){
+      if (timer > 66000){
         gy = 470;
       }
 
@@ -144,7 +134,7 @@ push();
         }
       }
 
-      if(timer > 71000){
+      if(timer > 66000){
         gh = 500;
         gw = 500;
         gx = 440;
@@ -152,20 +142,20 @@ push();
         bgx = 20000;
       }
 
-      if(timer > 75500){
+      if(timer > 70800){
         gh = 800;
         gw = 800;
         gx = 140;
         gy = 0;
 }
-      if (timer > 80500){
+      if (timer > 75500){
         gh = 1000;
         gw = 1000;
         gx = -10;
         gy = -10;
       }
 
-      if (timer > 85000){
+      if (timer > 80000){
         gh = 3000;
         gw = 3000;
         gx = -810;
@@ -174,16 +164,13 @@ push();
 pop();
 
 
-      if (timer > 90000){
-        MySound.pause();
-      }
-
-      if ((timer > 4000) && (timer < 15000)){
-        rt = rt - 1;
-      }
-
-      if (timer > 90000){
+      if (timer > 85000){
+        MySound.stop();
         rt = 255;
+      }
+
+      if ((timer > 1000) && (timer < 10000)){
+        rt = rt - 2;
       }
 
 
