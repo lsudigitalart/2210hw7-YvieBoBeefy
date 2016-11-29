@@ -423,6 +423,7 @@ pop();
       if (timer > 84800){
         mySound.stop();
         rt = 255;
+        rt3 = 0;
       }
 
       if ((timer > 1000) && (timer < 10000)){
